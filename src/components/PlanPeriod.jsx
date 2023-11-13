@@ -5,9 +5,9 @@ export default function PlanPeriod({ value, onChange }) {
     return (
         <div className="container">
             <div className="plan-period-wrapper">
-                <p>Monthly</p>
+                <p className={!value ? 'cheked' : ''}>Monthly</p>
                 <Toggle value={value} onChange={onChange}/>
-                <p>Yearly</p>
+                <p className={value ? 'cheked' : ''}>Yearly</p>
             </div>
         </div>
     )

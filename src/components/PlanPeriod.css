@@ -8,3 +8,11 @@
     border-radius: .5rem;
 }
 
+.plan-period-wrapper p {
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-cool-gray);
+}
+
+.plan-period-wrapper .cheked {
+    color: var(--clr-marine-blue);
+}
