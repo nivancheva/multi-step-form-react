@@ -18,6 +18,8 @@
     --fw-regular: 400;
     --fw-semi-bold: 500;
     --fw-bold: 700;
+
+    --border-radius: .5rem;
 }
 
 *, *::before, *::after {
@@ -46,6 +48,7 @@ body {
     font-family: var(--ff-main);
     font-size: var(--fsize-main);
     min-height: 100vh;
+    color: var(--clr-marine-blue);
 }
 
 .container {
@@ -59,7 +62,7 @@ body {
     padding: .75rem 1rem;
     font-weight: var(--fw-semi-bold);
     cursor: pointer;
-    border-radius: .5rem;
+    border-radius: var(--border-radius);
 }
 
 .button:hover {
