@@ -1,0 +1,41 @@
+.plan-card {
+    padding: 1rem;
+    display: flex;
+    border: 1px solid var(--clr-cool-gray);
+    border-radius: var(--border-radius);
+}
+
+.plan-card:hover {
+    cursor: pointer;
+    border-color: var(--clr-purple);
+}
+
+.plan-title {
+    font-weight: var(--fw-semi-bold);
+    margin-bottom: .4375rem;
+}
+
+.plan-price {
+    color: var(--clr-cool-gray);
+    font-size: .875rem;
+}
+
+.selected {
+    border-color: var(--clr-purple);
+    background-color: var(--clr-albaster);
+}
+
+@media (max-width:799px) {
+    .plan-card {
+        gap: .875rem;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width:800px) {
+    .plan-card {
+        padding: 1.5rem 1rem 1rem;
+        flex-direction: column;
+        gap: 2.5rem; 
+    }
+}
