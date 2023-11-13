@@ -1,0 +1,11 @@
+.bg-image {
+    background-image: url('../public/images/bg-sidebar-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width:800px) {
+    .bg-image {
+        background-image: url('../public/images/bg-sidebar-desktop.svg');
+    }
+}
