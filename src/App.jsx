@@ -6,6 +6,7 @@ import PlanCard from './components/PlanCard';
 import iconArcade from './images/icon-arcade.svg';
 import AddOns from './components/AddOns';
 import ThankYouCard from './components/ThankYouCard';
+import StepsPreview from './components/StepsPreview';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -23,6 +24,8 @@ function App() {
 
       <PlanCard image ={iconArcade} title="Arcade" price="$90" discount="2 months free" selected={true} />
       
+      <StepsPreview />
+
       <PlanPeriod value={checked} onChange={handleChecked}/>
       <Buttons />
     </div>
