@@ -55,6 +55,11 @@ body {
     padding-inline: 1.5rem;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+}
+
 .button {
     border: 0;
     outline: 0;

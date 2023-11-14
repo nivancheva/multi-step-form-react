@@ -1,0 +1,105 @@
+.add-ons-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem 1.25rem;
+    border: 1px solid var(--clr-purple);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.add-ons {
+    gap: 1rem;
+}
+
+.selected {
+    background-color: var(--clr-albaster);
+}
+
+.add-ons-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+  /* Hide the browser's default checkbox */
+.add-ons-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-cool-gray);
+    border-radius: .25rem;
+}
+  
+  /* On mouse-over, add a grey background color */
+  .add-ons-checkbox:hover input ~ .checkmark {
+    background-color: var( --clr-cool-gray);
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .add-ons-checkbox input:checked ~ .checkmark {
+    background-color: var(--clr-purple);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .add-ons-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .add-ons-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.add-ons-title {
+    font-weight: var(--fw-semi-bold);
+}
+
+.add-ons-description {
+    color: var(--clr-cool-gray);
+}
+
+.add-ons-price {
+    color: var(--clr-purple);
+    font-weight: var(--fw-semi-bold);
+}
+
+@media (min-width:800px) {
+    .add-ons {
+        gap: 1.5rem;
+    }
+}
