@@ -1,0 +1,11 @@
+.to-remove {
+    height: 173px;
+}
+
+
+
+@media (min-width:800px) {
+    .to-remove {
+        height: 568px;
+    }
+}

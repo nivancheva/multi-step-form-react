@@ -17,14 +17,16 @@ function App() {
 
   return (
     <div>
+      <div className='to-remove'>
+        <StepsPreview />
+      </div>
+
       <ThankYouCard />
 
       <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={true}/>
       <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={false}/>
 
       <PlanCard image ={iconArcade} title="Arcade" price="$90" discount="2 months free" selected={true} />
-      
-      <StepsPreview />
 
       <PlanPeriod value={checked} onChange={handleChecked}/>
       <Buttons />
