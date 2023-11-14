@@ -16,21 +16,36 @@ function App() {
   }
 
   return (
-    <div>
-      <div className='to-remove'>
-        <StepsPreview />
+    <div className='page-wrapper'>
+      <div className='grid'>
+
+        <div className='steps-wrapper'>
+          <StepsPreview />
+        </div>
+
+        <div className='main-wrapper'>
+          Main content
+        </div>
+
       </div>
-
-      <ThankYouCard />
-
-      <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={true}/>
-      <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={false}/>
-
-      <PlanCard image ={iconArcade} title="Arcade" price="$90" discount="2 months free" selected={true} />
-
-      <PlanPeriod value={checked} onChange={handleChecked}/>
-      <Buttons />
     </div>
+
+
+    // <div>
+    //   <div className='to-remove'>
+    //     <StepsPreview />
+    //   </div>
+
+    //   <ThankYouCard />
+
+    //   <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={true}/>
+    //   <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={false}/>
+
+    //   <PlanCard image ={iconArcade} title="Arcade" price="$90" discount="2 months free" selected={true} />
+
+    //   <PlanPeriod value={checked} onChange={handleChecked}/>
+    //   <Buttons />
+    // </div>
   )
 }
 
