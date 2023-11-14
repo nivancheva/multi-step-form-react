@@ -24,7 +24,13 @@ function App() {
         </div>
 
         <div className='main-wrapper'>
-          Main content
+          <div className='steps-section'>
+            <ThankYouCard />
+          </div>
+
+          <div className='button-section'>
+            <Buttons />
+          </div>
         </div>
 
       </div>

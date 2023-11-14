@@ -20,6 +20,8 @@
     --fw-bold: 700;
 
     --border-radius: .5rem;
+
+    --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 *, *::before, *::after {
@@ -49,6 +51,7 @@ body {
     font-size: var(--fsize-main);
     min-height: 100vh;
     color: var(--clr-marine-blue);
+    background-color: var(--clr-magnolia);
 }
 
 .container {

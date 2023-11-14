@@ -1,5 +1,8 @@
 .main-wrapper {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 @media  (max-width:799px){
@@ -7,13 +10,21 @@
         min-height: calc(100vh - 6rem);
         top: 6rem;
         position: absolute;
-        left: 1rem;
-        right: 1rem;
+        width: 100%;
     }
 
     .steps-wrapper {
         position: absolute;
         width: 100%;
+    }
+
+    .steps-section {
+        width: calc(100% - 2rem);
+        margin-inline: auto;
+        background-color: var(--clr-white);
+        border-radius: var(--border-radius);
+        padding: 2rem 1.5rem;
+        box-shadow: var(--box-shadow);
     }
 }
 
@@ -21,11 +32,16 @@
     .page-wrapper {
         display: grid;
         place-content: center;
-        min-height: 100vh;
+        min-height: 100vh;     
     }
 
     .grid {
         display: grid; 
         grid-template-columns: 1fr 2fr;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        padding: 1rem;
+        background-color: var(--clr-white);
+        box-shadow: var(--box-shadow);
     }
 }
