@@ -5,6 +5,7 @@ import PlanPeriod from './components/PlanPeriod';
 import PlanCard from './components/PlanCard';
 import iconArcade from './images/icon-arcade.svg';
 import AddOns from './components/AddOns';
+import ThankYouCard from './components/ThankYouCard';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -15,6 +16,8 @@ function App() {
 
   return (
     <div>
+      <ThankYouCard />
+
       <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={true}/>
       <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={false}/>
 

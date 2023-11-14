@@ -1,0 +1,23 @@
+.thank-you-card {
+    text-align: center;
+}
+
+.thank-you-card p {
+    color: var(--clr-cool-gray);
+    margin-top: .5625rem;
+}
+
+.icon-thank_you {
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width:800px) {
+    .thank-you-card p {
+        margin-top: .875rem;
+    }
+
+    .icon-thank_you {
+        margin-bottom: 2rem;
+    }
+}
