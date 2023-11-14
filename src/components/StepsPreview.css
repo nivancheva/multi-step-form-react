@@ -1,11 +1,64 @@
 .bg-image {
     background-image: url('../public/images/bg-sidebar-mobile.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
+    color: var(--clr-white);
+
+    font-size: .875rem;
+    font-weight: var(--fw-bold);
+    display: flex;
+    gap: 1rem;
 }
+
+.step {
+    cursor: pointer;
+    padding: .5rem 1rem;
+    border: 1px solid var(--clr-white);
+    border-radius: 50%;
+}
+
+.step-num {
+    text-transform: uppercase;
+    font-weight: var(--fw-regular);
+    color: var(--clr-pastel-blue);
+}
+
+.step-active {
+    color: var(--clr-marine-blue);
+    background-color: var(--clr-light-blue);
+    border-color: var(--clr-light-blue);
+}
+
+@media (max-width:799px) {
+    .bg-image {
+        background-size: cover;
+        background-position: center;
+        padding-top: 2rem;
+        justify-content: center;
+    }
+
+    .steps-info {
+        display: none;
+    }
+}
+
 
 @media (min-width:800px) {
     .bg-image {
         background-image: url('../public/images/bg-sidebar-desktop.svg');
+        padding: 2.5rem 5.563rem 0 2rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .step-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .step {
+        display: block;
     }
 }
