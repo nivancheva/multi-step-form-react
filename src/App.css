@@ -25,6 +25,7 @@
         border-radius: var(--border-radius);
         padding: 2rem 1.5rem;
         box-shadow: var(--box-shadow);
+        min-height: 375px;
     }
 }
 
@@ -44,6 +45,7 @@
         background-color: var(--clr-white);
         box-shadow: var(--box-shadow);
         max-width: 940px;
+        min-height: 600px;
     }
 
     .main-wrapper {

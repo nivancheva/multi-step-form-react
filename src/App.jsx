@@ -2,19 +2,14 @@ import { useState } from 'react';
 import './App.css';
 import Buttons from './components/Buttons';
 import PlanPeriod from './components/PlanPeriod';
-import PlanCard from './components/PlanCard';
-import iconArcade from './images/icon-arcade.svg';
 import AddOns from './components/AddOns';
 import ThankYouCard from './components/ThankYouCard';
 import StepsPreview from './components/StepsPreview';
 import StepOneInputs from './step-components/StepOneInputs';
+import StepTwoSelectPlan from './step-components/StepTwoSelectPlan';
 
 function App() {
-  const [checked, setChecked] = useState(false);
-
-  function handleChecked(x) {
-    setChecked(x);
-  }
+  
 
   return (
     <div className='page-wrapper'>
@@ -27,7 +22,9 @@ function App() {
         <div className='main-wrapper'>
           <div className='steps-section'>
 
-            <StepOneInputs />
+            {/* <StepOneInputs /> */}
+
+            {/* <StepTwoSelectPlan /> */}
 
             {/* <ThankYouCard /> */}
           </div>

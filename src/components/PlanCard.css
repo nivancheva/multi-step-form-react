@@ -20,6 +20,10 @@
     font-size: .875rem;
 }
 
+.plan-discount {
+    font-size: .75rem;
+}
+
 .selected {
     border-color: var(--clr-purple);
     background-color: var(--clr-albaster);

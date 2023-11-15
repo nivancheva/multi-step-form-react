@@ -1,0 +1,13 @@
+.card-wrapper {
+    display: grid;
+    gap: .75rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width:800px) {
+    .card-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.125rem;
+        margin-bottom: 2rem;
+    }
+}
