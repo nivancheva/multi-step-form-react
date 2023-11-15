@@ -1,10 +1,7 @@
-.step-one {
+.step-title {
     margin-bottom: 2.5rem;
-  }
+}
 
-  .step-one-wrapper p{
+.step-title_definition{
     color: var(--clr-cool-gray);
-  }
-
-
-  
+}
