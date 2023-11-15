@@ -3,7 +3,7 @@ import './PlanPeriod.css'
 
 export default function PlanPeriod({ value, onChange }) {
     return (
-        <div className="container">
+        <div className="">
             <div className="plan-period-wrapper">
                 <p className={!value ? 'cheked' : ''}>Monthly</p>
                 <Toggle value={value} onChange={onChange}/>

@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className='page-wrapper'>
-      <div className='grid'>
+      <div className='step-form'>
 
         <div className='steps-wrapper'>
           <StepsPreview />
@@ -25,6 +25,7 @@ function App() {
 
         <div className='main-wrapper'>
           <div className='steps-section'>
+            
             <ThankYouCard />
           </div>
 

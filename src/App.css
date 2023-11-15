@@ -35,7 +35,7 @@
         min-height: 100vh;     
     }
 
-    .grid {
+    .step-form {
         display: grid; 
         grid-template-columns: 1fr 2fr;
         border-radius: var(--border-radius);
@@ -43,5 +43,10 @@
         padding: 1rem;
         background-color: var(--clr-white);
         box-shadow: var(--box-shadow);
+        max-width: 940px;
+    }
+
+    .main-wrapper {
+        padding: 2.5rem 6.25rem 1rem;
     }
 }

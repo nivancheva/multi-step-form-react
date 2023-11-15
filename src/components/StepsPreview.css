@@ -29,9 +29,12 @@
     border-color: var(--clr-light-blue);
 }
 
+.bg-image {
+    background-size: cover;
+}
+
 @media (max-width:799px) {
     .bg-image {
-        background-size: cover;
         background-position: center;
         padding-top: 2rem;
         padding-bottom: 7.5rem;
