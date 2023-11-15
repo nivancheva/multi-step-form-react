@@ -7,6 +7,7 @@ import iconArcade from './images/icon-arcade.svg';
 import AddOns from './components/AddOns';
 import ThankYouCard from './components/ThankYouCard';
 import StepsPreview from './components/StepsPreview';
+import StepOneInputs from './step-components/StepOneInputs';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -25,8 +26,10 @@ function App() {
 
         <div className='main-wrapper'>
           <div className='steps-section'>
-            
-            <ThankYouCard />
+
+            <StepOneInputs />
+
+            {/* <ThankYouCard /> */}
           </div>
 
           <div className='button-section'>

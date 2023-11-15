@@ -54,10 +54,6 @@ body {
     background-color: var(--clr-magnolia);
 }
 
-.container {
-    padding-inline: 1.5rem;
-}
-
 .flex {
     display: flex;
     align-items: center;
@@ -93,7 +89,7 @@ body {
 }
 
 @media (min-width:800px) {
-    .container {
-        padding-inline: 6.25rem;
+    .btn-clear {
+        padding: 0;
     }
 }
