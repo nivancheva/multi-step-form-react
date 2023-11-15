@@ -12,24 +12,28 @@ const cards = [
         image: iconArcade,
         title:'Arcade',
         price:"$9/mo",
+        yearlyPrice:"$90/y",
         discount:"2 months free",
     },
     {
         image:iconAdvanced,
         title:'Advanced',
-        price:"$90",
+        price:"$12/mo",
+        yearlyPrice:"$120/y",
         discount:"2 months free"
     },
     {
         image:iconPro,
         title:'Pro',
-        price:"$$15/mo",
+        price:"$15/mo",
+        yearlyPrice:"$150/y",
         discount:"2 months free"
     }
 ]
 
 export default function StepTwoSelectPlan() {
     const [checked, setChecked] = useState(false);
+    const [selectedCard, setSelectedCard] = useState();
 
     function handleChecked(x) {
         setChecked(x);
@@ -42,14 +46,19 @@ export default function StepTwoSelectPlan() {
 
             <div className='card-wrapper'>
                 {cards.map((card,idx) => {
+                    const price = checked ? card.yearlyPrice : card.price;
+                    const isSelected = card === selectedCard;
                     return (
-                        <PlanCard
-                            key={idx}
-                            image={card.image}
-                            title={card.title}
-                            price={card.price}
-                            discount={card.discount}
-                            selected={false}/>
+                        <div onClick={() => setSelectedCard(card)}>
+                            <PlanCard
+                                key={idx}
+                                image={card.image}
+                                title={card.title}
+                                price={price}
+                                discount={card.discount}
+                                showDiscount={checked}
+                                selected={isSelected}/>
+                        </div>
                     )
                 })}
             </div>
