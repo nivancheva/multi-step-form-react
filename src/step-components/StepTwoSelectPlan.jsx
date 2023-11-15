@@ -49,9 +49,8 @@ export default function StepTwoSelectPlan() {
                     const price = checked ? card.yearlyPrice : card.price;
                     const isSelected = card === selectedCard;
                     return (
-                        <div onClick={() => setSelectedCard(card)}>
+                        <div key={idx} onClick={() => setSelectedCard(card)}>
                             <PlanCard
-                                key={idx}
                                 image={card.image}
                                 title={card.title}
                                 price={price}
