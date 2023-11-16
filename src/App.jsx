@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import Buttons from './components/Buttons';
-import PlanPeriod from './components/PlanPeriod';
-import AddOns from './components/AddOns';
 import ThankYouCard from './components/ThankYouCard';
 import StepsPreview from './components/StepsPreview';
 import StepOneInputs from './step-components/StepOneInputs';
@@ -11,48 +8,41 @@ import StepThreeAddOns from './step-components/StepThreeAddOns';
 import StepFourSummary from './step-components/StepFourSummary';
 
 function App() {
+  const [currentStep, setCurrentStep] = useState(1);
+
+  function getStepContent() {
+    switch (currentStep) {
+      case 1:
+        return <StepOneInputs />;
+      case 2:
+        return <StepTwoSelectPlan />;
+      case 3:
+        return <StepThreeAddOns />;
+      case 4:
+        return <StepFourSummary />;
+      case 5:
+        return <ThankYouCard />;
+    }
+  }
+
+  function onStepsPreviewValueChanged(value) {
+    setCurrentStep(value);
+  }
 
   return (
     <div className='page-wrapper'>
       <div className='step-form'>
 
         <div className='steps-wrapper'>
-          <StepsPreview />
+          <StepsPreview value={currentStep} onValueChanged={onStepsPreviewValueChanged} />
         </div>
 
         <div className='main-wrapper'>
-
-            {/* <StepOneInputs /> */}
-
-            {/* <StepTwoSelectPlan /> */}
-
-            {/* <StepThreeAddOns /> */}
-
-            {/* <StepFourSummary /> */}
-
-            {/* <ThankYouCard /> */}
-
+            { getStepContent() }
         </div>
 
       </div>
     </div>
-
-
-    // <div>
-    //   <div className='to-remove'>
-    //     <StepsPreview />
-    //   </div>
-
-    //   <ThankYouCard />
-
-    //   <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={true}/>
-    //   <AddOns title='Online Service' description='Access to multiplayer games' price='+$1/mo' selected={false}/>
-
-    //   <PlanCard image ={iconArcade} title="Arcade" price="$90" discount="2 months free" selected={true} />
-
-    //   <PlanPeriod value={checked} onChange={handleChecked}/>
-    //   <Buttons />
-    // </div>
   )
 }
 
