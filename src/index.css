@@ -94,6 +94,11 @@ body {
     .button {
         font-size: .875rem;
     }
+
+    
+.button-section {
+    padding: 1rem;
+}
 }
 
 @media (min-width:800px) {
