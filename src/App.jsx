@@ -8,9 +8,9 @@ import StepsPreview from './components/StepsPreview';
 import StepOneInputs from './step-components/StepOneInputs';
 import StepTwoSelectPlan from './step-components/StepTwoSelectPlan';
 import StepThreeAddOns from './step-components/StepThreeAddOns';
+import StepFourSummry from './step-components/StepFourSummary';
 
 function App() {
-  
 
   return (
     <div className='page-wrapper'>
@@ -27,7 +27,9 @@ function App() {
 
             {/* <StepTwoSelectPlan /> */}
 
-            <StepThreeAddOns />
+            {/* <StepThreeAddOns /> */}
+
+            <StepFourSummry />
 
             {/* <ThankYouCard /> */}
           </div>
