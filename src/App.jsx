@@ -8,7 +8,7 @@ import StepsPreview from './components/StepsPreview';
 import StepOneInputs from './step-components/StepOneInputs';
 import StepTwoSelectPlan from './step-components/StepTwoSelectPlan';
 import StepThreeAddOns from './step-components/StepThreeAddOns';
-import StepFourSummry from './step-components/StepFourSummary';
+import StepFourSummary from './step-components/StepFourSummary';
 
 function App() {
 
@@ -29,7 +29,7 @@ function App() {
 
             {/* <StepThreeAddOns /> */}
 
-            <StepFourSummry />
+            <StepFourSummary />
 
             {/* <ThankYouCard /> */}
           </div>
