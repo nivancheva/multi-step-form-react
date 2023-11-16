@@ -29,36 +29,46 @@ const summary = {
 
 export default function StepFourSummary() {
     return (
-        <div>
-            <StepTitle title='Finishing up' definition='Double-check everything looks OK before confirming.'/>
+        <>
+        <div className='steps-section'>
+            <div>
+                <StepTitle title='Finishing up' definition='Double-check everything looks OK before confirming.'/>
 
-            <div className='summary-wrapper'>
-                <div className='summary'>
-                    <div className='plan flex'>
-                        <div>
-                            <p>{summary.plan.title}</p>
-                            <button className='btn-change'>Change</button>
+                <div className='summary-wrapper'>
+                    <div className='summary'>
+                        <div className='plan flex'>
+                            <div>
+                                <p>{summary.plan.title}</p>
+                                <button className='btn-change'>Change</button>
+                            </div>
+                            <p className='plan-price'>{summary.plan.price}</p>
                         </div>
-                        <p className='plan-price'>{summary.plan.price}</p>
+                        <div className='summary-addon-wrapper'>
+                            {summary.addOns.map((summaryAddOn, idx) => {
+                                return (
+                                    <div key={idx} className='flex summary-addon'>
+                                        <p>{summaryAddOn.title}</p>
+                                        <p className='addon-price'>{summaryAddOn.price}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
-                    <div className='summary-addon-wrapper'>
-                        {summary.addOns.map((summaryAddOn, idx) => {
-                            return (
-                                <div key={idx} className='flex summary-addon'>
-                                    <p>{summaryAddOn.title}</p>
-                                    <p className='addon-price'>{summaryAddOn.price}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
 
-                <div className='total flex'>
-                    <p>Total (per month)</p>
-                    <p className='total-price'>+$12/mo</p>
+                    <div className='total flex'>
+                        <p>Total (per month)</p>
+                        <p className='total-price'>+$12/mo</p>
+                    </div>
                 </div>
             </div>
-        </div>
+          </div>
 
+          <div className='button-section'>
+            <div className='flex flex-space-between bg-white'>
+              <button className="button btn-clear">Go Back</button>
+              <button className="button btn-primery">Confirm</button>
+            </div>
+          </div>
+        </>
     )
 }

@@ -46,28 +46,39 @@ export default function StepTwoSelectPlan() {
     }
 
     return (
-        <div>
-            
-            <StepTitle title='Select your plan' definition='You have the option of monthly or yearly billing.'/>
+        <>
+        <div className='steps-section'>
+            <div>
+                
+                <StepTitle title='Select your plan' definition='You have the option of monthly or yearly billing.'/>
 
-            <div className='card-wrapper'>
-                {cards.map((card,idx) => {
-                    const price = checked ? card.yearlyPrice : card.price;
-                    const isSelected = card === selectedCard;
-                    return (
-                        <div key={idx} onClick={() => setSelectedCard(card)}>
-                            <PlanCard
-                                {...card}
-                                price={price}
-                                showDiscount={checked}
-                                selected={isSelected}/>
-                        </div>
-                    )
-                })}
+                <div className='card-wrapper'>
+                    {cards.map((card,idx) => {
+                        const price = checked ? card.yearlyPrice : card.price;
+                        const isSelected = card === selectedCard;
+                        return (
+                            <div key={idx} onClick={() => setSelectedCard(card)}>
+                                <PlanCard
+                                    {...card}
+                                    price={price}
+                                    showDiscount={checked}
+                                    selected={isSelected}/>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                <PlanPeriod value={checked} onChange={handleChecked}/>
+                
             </div>
-
-            <PlanPeriod value={checked} onChange={handleChecked}/>
-            
         </div>
+
+        <div className='button-section'>
+            <div className='flex flex-space-between bg-white'>
+                <button className="button btn-clear">Go Back</button>
+              <button className="button btn-primery">Next Steps</button>
+            </div>
+        </div>
+    </>
     )
 }

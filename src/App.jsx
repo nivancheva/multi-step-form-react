@@ -21,7 +21,6 @@ function App() {
         </div>
 
         <div className='main-wrapper'>
-          <div className='steps-section'>
 
             {/* <StepOneInputs /> */}
 
@@ -29,14 +28,10 @@ function App() {
 
             {/* <StepThreeAddOns /> */}
 
-            <StepFourSummary />
+            {/* <StepFourSummary /> */}
 
             {/* <ThankYouCard /> */}
-          </div>
 
-          <div className='button-section'>
-            <Buttons />
-          </div>
         </div>
 
       </div>
