@@ -59,6 +59,14 @@ body {
     align-items: center;
 }
 
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.bg-white {
+    background-color: var(--clr-white);
+}
+
 .button {
     border: 0;
     outline: 0;

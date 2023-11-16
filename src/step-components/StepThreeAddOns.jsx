@@ -36,22 +36,33 @@ export default function StepThreeAddOns() {
     }
 
     return (
-        <div>
-            <StepTitle title='Pick add-ons' definition='Add-ons help enhance your gaming experience.'/>
+        <>
+        <div className='steps-section'>
+            <div>
+                <StepTitle title='Pick add-ons' definition='Add-ons help enhance your gaming experience.'/>
 
-            <div className='addOns-wrapper'>
-                {addOns.map((addOn,idx) => {
-                    const isSelected = selectedAddOns.indexOf(addOn) > -1;
-                    return (
-                        <div key={idx}>
-                            <AddOns
-                                {...addOn}
-                                onChange={() => toggleAddOn(addOn)}
-                                selected={isSelected}/>
-                        </div>
-                    )
-                })}
+                <div className='addOns-wrapper'>
+                    {addOns.map((addOn,idx) => {
+                        const isSelected = selectedAddOns.indexOf(addOn) > -1;
+                        return (
+                            <div key={idx}>
+                                <AddOns
+                                    {...addOn}
+                                    onChange={() => toggleAddOn(addOn)}
+                                    selected={isSelected}/>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
+
+        <div className='button-section'>
+            <div className='flex flex-space-between bg-white'>
+                <button className="button btn-clear">Go Back</button>
+              <button className="button btn-primery">Next Steps</button>
+            </div>
+        </div>
+        </>
     )
 }
