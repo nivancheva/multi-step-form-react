@@ -27,7 +27,7 @@ const summary = {
     ]
 }
 
-export default function StepFourSummary() {
+export default function StepFourSummary({ onForwardClick, onBackClick }) {
     return (
         <>
         <div className='steps-section'>
@@ -65,8 +65,8 @@ export default function StepFourSummary() {
 
           <div className='button-section'>
             <div className='flex flex-space-between bg-white'>
-              <button className="button btn-clear">Go Back</button>
-              <button className="button btn-primery">Confirm</button>
+              <button onClick={onBackClick} className="button btn-clear">Go Back</button>
+              <button onClick={onForwardClick} className="button btn-primery">Confirm</button>
             </div>
           </div>
         </>

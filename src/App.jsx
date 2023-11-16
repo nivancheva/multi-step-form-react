@@ -13,13 +13,13 @@ function App() {
   function getStepContent() {
     switch (currentStep) {
       case 1:
-        return <StepOneInputs />;
+        return <StepOneInputs onForwardClick={goForward} />;
       case 2:
-        return <StepTwoSelectPlan />;
+        return <StepTwoSelectPlan onBackClick={goBack} onForwardClick={goForward} />;
       case 3:
-        return <StepThreeAddOns />;
+        return <StepThreeAddOns onBackClick={goBack} onForwardClick={goForward} />;
       case 4:
-        return <StepFourSummary />;
+        return <StepFourSummary onBackClick={goBack} onForwardClick={goForward} />;
       case 5:
         return <ThankYouCard />;
     }
@@ -27,6 +27,14 @@ function App() {
 
   function onStepsPreviewValueChanged(value) {
     setCurrentStep(value);
+  }
+
+  function goBack() {
+    setCurrentStep((value) => value - 1);
+  }
+
+  function goForward() {
+    setCurrentStep((value) => value + 1);
   }
 
   return (
