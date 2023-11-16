@@ -46,6 +46,7 @@
         box-shadow: var(--box-shadow);
         max-width: 940px;
         min-height: 600px;
+        margin-inline: 1rem;
     }
 
     .main-wrapper {
