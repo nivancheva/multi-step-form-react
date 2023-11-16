@@ -19,7 +19,7 @@ const steps = [
     }
 ];
 
-export default function StepsPreview({ value, onValueChanged }) {
+export default function StepsPreview({ value }) {
     return (
         <div className='bg-image'>
 
@@ -27,7 +27,7 @@ export default function StepsPreview({ value, onValueChanged }) {
                 const isSelected = step.value === value || step.value === 4 && value === 5;
                 return (
                     <div key={idx} className='step-wrapper'>
-                        <div onClick={() => { onValueChanged(step.value) }}>
+                        <div>
                             <span className={`step ${isSelected ? "step-active" : ""}`}>{step.value}</span>
                         </div>
                         <div className='steps-info'>

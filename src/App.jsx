@@ -58,7 +58,7 @@ function App() {
       <div className='step-form'>
 
         <div className='steps-wrapper'>
-          <StepsPreview value={currentStep} onValueChanged={onStepsPreviewValueChanged} />
+          <StepsPreview value={currentStep} />
         </div>
 
         <div className='main-wrapper'>
