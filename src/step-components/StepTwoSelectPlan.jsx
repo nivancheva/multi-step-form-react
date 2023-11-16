@@ -12,21 +12,27 @@ const cards = [
         image: iconArcade,
         title:'Arcade',
         price:"$9/mo",
+        valuePriceM: 9,
         yearlyPrice:"$90/y",
-        discount:"2 months free",
+        valuePriceY: 90,
+        discount:"2 months free"
     },
     {
         image:iconAdvanced,
         title:'Advanced',
         price:"$12/mo",
+        valuePriceM: 12,
         yearlyPrice:"$120/y",
+        valuePriceY: 120,
         discount:"2 months free"
     },
     {
         image:iconPro,
         title:'Pro',
         price:"$15/mo",
+        valuePriceM: 15,
         yearlyPrice:"$150/y",
+        valuePriceY: 150,
         discount:"2 months free"
     }
 ]
