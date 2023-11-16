@@ -24,11 +24,10 @@ export default function StepsPreview({ value, onValueChanged }) {
         <div className='bg-image'>
 
             {steps.map((step, idx) => {
-                const isSelected = step.value === value;
+                const isSelected = step.value === value || step.value === 4 && value === 5;
                 return (
-                    <div key={idx} className='step-wrapper'
-                        onClick={() => { onValueChanged(step.value) }}>
-                        <div>
+                    <div key={idx} className='step-wrapper'>
+                        <div onClick={() => { onValueChanged(step.value) }}>
                             <span className={`step ${isSelected ? "step-active" : ""}`}>{step.value}</span>
                         </div>
                         <div className='steps-info'>

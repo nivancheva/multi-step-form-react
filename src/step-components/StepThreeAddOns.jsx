@@ -24,7 +24,7 @@ const addOns = [
     }
 ]
 
-export default function StepThreeAddOns() {
+export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
     const [selectedAddOns, setSelectedAddOns] = useState([]);
 
     function toggleAddOn(addOn) {
@@ -59,8 +59,8 @@ export default function StepThreeAddOns() {
 
         <div className='button-section'>
             <div className='flex flex-space-between bg-white'>
-                <button className="button btn-clear">Go Back</button>
-              <button className="button btn-primery">Next Steps</button>
+                <button onClick={onBackClick} className="button btn-clear">Go Back</button>
+                <button onClick={onForwardClick} className="button btn-primery">Next Steps</button>
             </div>
         </div>
         </>

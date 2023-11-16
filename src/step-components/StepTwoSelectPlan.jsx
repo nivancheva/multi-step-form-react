@@ -37,7 +37,7 @@ const cards = [
     }
 ]
 
-export default function StepTwoSelectPlan() {
+export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
     const [checked, setChecked] = useState(false);
     const [selectedCard, setSelectedCard] = useState();
 
@@ -75,8 +75,8 @@ export default function StepTwoSelectPlan() {
 
         <div className='button-section'>
             <div className='flex flex-space-between bg-white'>
-                <button className="button btn-clear">Go Back</button>
-              <button className="button btn-primery">Next Steps</button>
+                <button onClick={onBackClick} className="button btn-clear">Go Back</button>
+                <button onClick={onForwardClick} className="button btn-primery">Next Steps</button>
             </div>
         </div>
     </>

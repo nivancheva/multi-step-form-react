@@ -1,7 +1,7 @@
 import Inputs from "../components/Inputs";
 import StepTitle from "./StepTitle";
 
-export default function StepOneInputs() {
+export default function StepOneInputs({ onForwardClick }) {
     return (
         <>
         <div className='steps-section'>
@@ -14,7 +14,7 @@ export default function StepOneInputs() {
 
           <div className='button-section'>
             <div className='flex flex-space-between bg-white'>
-              <button className="button btn-primery">Next Steps</button>
+              <button onClick={onForwardClick} className="button btn-primery">Next Steps</button>
             </div>
           </div>
         </>
