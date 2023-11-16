@@ -22,7 +22,15 @@ const addOns = [
 ]
 
 export default function StepThreeAddOns() {
-    const [selectedAddOns, setSelectedAddOns] = useState();
+    const [selectedAddOns, setSelectedAddOns] = useState([]);
+
+    function toggleAddOn(addOn) {
+        if (selectedAddOns.indexOf(addOn) > -1) {
+            setSelectedAddOns(selectedAddOns.filter(a => a !== addOn));
+        } else {
+            setSelectedAddOns([...selectedAddOns, addOn]);
+        }
+    }
 
     return (
         <div>
@@ -30,13 +38,12 @@ export default function StepThreeAddOns() {
 
             <div className='addOns-wrapper'>
                 {addOns.map((addOn,idx) => {
-                    const isSelected = addOn === selectedAddOns;
+                    const isSelected = selectedAddOns.indexOf(addOn) > -1;
                     return (
-                        <div key={idx} onClick={() => setSelectedAddOns(addOn)}>
+                        <div key={idx}>
                             <AddOns
-                                title={addOn.title}
-                                description={addOn.description}
-                                price={addOn.price}
+                                {...addOn}
+                                onChange={() => toggleAddOn(addOn)}
                                 selected={isSelected}/>
                         </div>
                     )

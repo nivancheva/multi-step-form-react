@@ -1,11 +1,11 @@
 import './AddOns.css';
 
-export default function AddOns({ title, description, price, selected }) {
+export default function AddOns({ title, description, price, selected, onChange }) {
     return (
         <div className={`add-ons-wrapper${selected ? " selected" : ""}`}>
             <div className='flex add-ons'>
                 <label className="add-ons-checkbox">
-                    <input type="checkbox"/>
+                    <input type="checkbox" checked={selected} onChange={onChange} />
                     <span className="checkmark"></span>
                 </label>
                 <div>
