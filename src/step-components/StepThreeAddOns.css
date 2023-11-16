@@ -1,0 +1,10 @@
+.addOns-wrapper {
+    display: grid;
+    gap: .75rem;
+}
+
+@media (min-width:800px) {
+    .addOns-wrapper {
+        gap: 1rem;
+    }
+}
