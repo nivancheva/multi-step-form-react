@@ -7,6 +7,7 @@ import ThankYouCard from './components/ThankYouCard';
 import StepsPreview from './components/StepsPreview';
 import StepOneInputs from './step-components/StepOneInputs';
 import StepTwoSelectPlan from './step-components/StepTwoSelectPlan';
+import StepThreeAddOns from './step-components/StepThreeAddOns';
 
 function App() {
   
@@ -25,6 +26,8 @@ function App() {
             {/* <StepOneInputs /> */}
 
             {/* <StepTwoSelectPlan /> */}
+
+            <StepThreeAddOns />
 
             {/* <ThankYouCard /> */}
           </div>
