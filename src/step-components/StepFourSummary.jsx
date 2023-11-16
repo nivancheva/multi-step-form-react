@@ -1,50 +1,38 @@
 import './StepFourSummary.css';
 import StepTitle from './StepTitle';
 
-const summary = {
-    // personalInfo: {
+export default function StepFourSummary({ onForwardClick, onBackClick, onChangeClick, formData }) {
+    function getTotalPrice() {
+        let result = 0;
 
-    // },
-    plan: 
-    {
-        // image: iconArcade,
-        title:'Arcade',
-        price:"$9/mo",
-        yearlyPrice:"$90/y",
-        discount:"2 months free"
-    },
-    addOns: [
-        {
-            title:'Online service',
-            description:"Access to multiplayer games",
-            price:"+$1/mo"
-        },
-        {
-            title:'Larger storage',
-            description:"Extra 1TB of cloud save",
-            price:"+$2/mo"
+        if (formData.yearly) {
+            result += formData.plan.valuePriceY;
+        } else {
+            result += formData.plan.valuePriceM;
         }
-    ]
-}
 
-export default function StepFourSummary({ onForwardClick, onBackClick }) {
+        formData.addOns.forEach(addOn => {
+            result += addOn.valuePrice;
+        });
+
+        return `+$${result}/${formData.yearly ? "y" : "mo"}`;
+    }
     return (
         <>
         <div className='steps-section'>
             <div>
                 <StepTitle title='Finishing up' definition='Double-check everything looks OK before confirming.'/>
-
                 <div className='summary-wrapper'>
                     <div className='summary'>
                         <div className='plan flex'>
                             <div>
-                                <p>{summary.plan.title}</p>
-                                <button className='btn-change'>Change</button>
+                                <p>{formData.plan.title} ({formData.yearly ? "Yearly" : "Monthly"})</p>
+                                <button onClick={onChangeClick} className='btn-change'>Change</button>
                             </div>
-                            <p className='plan-price'>{summary.plan.price}</p>
+                            <p className='plan-price'>{formData.yearly ? formData.plan.yearlyPrice : formData.plan.price}</p>
                         </div>
                         <div className='summary-addon-wrapper'>
-                            {summary.addOns.map((summaryAddOn, idx) => {
+                            {formData.addOns.map((summaryAddOn, idx) => {
                                 return (
                                     <div key={idx} className='flex summary-addon'>
                                         <p>{summaryAddOn.title}</p>
@@ -57,7 +45,7 @@ export default function StepFourSummary({ onForwardClick, onBackClick }) {
 
                     <div className='total flex'>
                         <p>Total (per month)</p>
-                        <p className='total-price'>+$12/mo</p>
+                        <p className='total-price'>{getTotalPrice()}</p>
                     </div>
                 </div>
             </div>
