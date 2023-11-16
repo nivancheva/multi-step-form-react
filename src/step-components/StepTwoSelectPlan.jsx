@@ -51,10 +51,8 @@ export default function StepTwoSelectPlan() {
                     return (
                         <div key={idx} onClick={() => setSelectedCard(card)}>
                             <PlanCard
-                                image={card.image}
-                                title={card.title}
+                                {...card}
                                 price={price}
-                                discount={card.discount}
                                 showDiscount={checked}
                                 selected={isSelected}/>
                         </div>
