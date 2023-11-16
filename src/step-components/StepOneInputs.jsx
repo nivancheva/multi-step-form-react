@@ -1,3 +1,4 @@
+import './StepOneInputs.css';
 import Inputs from "../components/Inputs";
 import StepTitle from "./StepTitle";
 import { useForm } from "react-hook-form";
@@ -39,7 +40,7 @@ export default function StepOneInputs({ onForwardClick }) {
           </div>
 
           <div className='button-section'>
-            <div className='flex flex-space-between bg-white'>
+            <div className='flex flex-space-between bg-white btn-next'>
               <button form="myform" className="button btn-primery">Next Steps</button>
             </div>
           </div>

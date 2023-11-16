@@ -23,6 +23,10 @@
     color: var(--clr-pastel-blue);
 }
 
+.step-title {
+    text-transform: uppercase;
+}
+
 .step-active {
     color: var(--clr-marine-blue);
     background-color: var(--clr-light-blue);
@@ -53,6 +57,7 @@
         padding: 2.5rem 5.563rem 0 2rem;
         flex-direction: column;
         gap: 2rem;
+        border-radius: var(--border-radius);
     }
 
     .step-wrapper {

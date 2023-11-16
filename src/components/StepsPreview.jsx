@@ -7,15 +7,15 @@ const steps = [
     },
     {
         value: 2,
-        title: "SELECT PLAN"
+        title: "Select plan"
     },
     {
         value: 3,
-        title: "ADD-ONS"
+        title: "Add-ons"
     },
     {
         value: 4,
-        title: "SUMMARY"
+        title: "Summary"
     }
 ];
 

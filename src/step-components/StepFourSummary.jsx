@@ -54,7 +54,7 @@ export default function StepFourSummary({ onForwardClick, onBackClick, onChangeC
           <div className='button-section'>
             <div className='flex flex-space-between bg-white'>
               <button onClick={onBackClick} className="button btn-clear">Go Back</button>
-              <button onClick={onForwardClick} className="button btn-primery">Confirm</button>
+              <button onClick={onForwardClick} className="btn-confirm">Confirm</button>
             </div>
           </div>
         </>
