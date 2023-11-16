@@ -35,6 +35,10 @@ export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
         }
     }
 
+    function handleForward() {
+        onForwardClick(selectedAddOns);
+    }
+
     return (
         <>
         <div className='steps-section'>
@@ -60,7 +64,7 @@ export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
         <div className='button-section'>
             <div className='flex flex-space-between bg-white'>
                 <button onClick={onBackClick} className="button btn-clear">Go Back</button>
-                <button onClick={onForwardClick} className="button btn-primery">Next Steps</button>
+                <button onClick={handleForward} className="button btn-primery">Next Steps</button>
             </div>
         </div>
         </>

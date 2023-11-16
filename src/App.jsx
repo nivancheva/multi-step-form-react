@@ -9,17 +9,18 @@ import StepFourSummary from './step-components/StepFourSummary';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [formData, setFormData] = useState({});
 
   function getStepContent() {
     switch (currentStep) {
       case 1:
-        return <StepOneInputs onForwardClick={goForward} />;
+        return <StepOneInputs onForwardClick={onStepOneSubmit} />;
       case 2:
-        return <StepTwoSelectPlan onBackClick={goBack} onForwardClick={goForward} />;
+        return <StepTwoSelectPlan onBackClick={goBack} onForwardClick={onStepTwoSubmit} />;
       case 3:
-        return <StepThreeAddOns onBackClick={goBack} onForwardClick={goForward} />;
+        return <StepThreeAddOns onBackClick={goBack} onForwardClick={onStepThreeSubmit} />;
       case 4:
-        return <StepFourSummary onBackClick={goBack} onForwardClick={goForward} />;
+        return <StepFourSummary formData={formData} onBackClick={goBack} onForwardClick={goForward} onChangeClick={() => setCurrentStep(2)} />;
       case 5:
         return <ThankYouCard />;
     }
@@ -35,6 +36,21 @@ function App() {
 
   function goForward() {
     setCurrentStep((value) => value + 1);
+  }
+
+  function onStepOneSubmit(data) {
+    setFormData(formData => { return {...formData, personalInfo: data}});
+    goForward();
+  }
+
+  function onStepTwoSubmit(data) {
+    setFormData(formData => { return {...formData, plan: data.plan, yearly: data.yearly}});
+    goForward();
+  }
+
+  function onStepThreeSubmit(data) {
+    setFormData(formData => { return {...formData, addOns: data }});
+    goForward();
   }
 
   return (

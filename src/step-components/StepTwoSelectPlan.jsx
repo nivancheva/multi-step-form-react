@@ -45,6 +45,13 @@ export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
         setChecked(x);
     }
 
+    function handleForward() {
+        onForwardClick({
+            plan: selectedCard,
+            yearly: checked
+        });
+    }
+
     return (
         <>
         <div className='steps-section'>
@@ -76,7 +83,7 @@ export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
         <div className='button-section'>
             <div className='flex flex-space-between bg-white'>
                 <button onClick={onBackClick} className="button btn-clear">Go Back</button>
-                <button onClick={onForwardClick} className="button btn-primery">Next Steps</button>
+                <button onClick={handleForward} className="button btn-primery">Next Steps</button>
             </div>
         </div>
     </>
