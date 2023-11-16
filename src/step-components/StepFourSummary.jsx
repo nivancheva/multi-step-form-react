@@ -41,7 +41,16 @@ export default function StepFourSummary() {
                         </div>
                         <p className='plan-price'>{summary.plan.price}</p>
                     </div>
-                    <div></div>
+                    <div className='summary-addon-wrapper'>
+                        {summary.addOns.map((summaryAddOn, idx) => {
+                            return (
+                                <div key={idx} className='flex summary-addon'>
+                                    <p>{summaryAddOn.title}</p>
+                                    <p className='addon-price'>{summaryAddOn.price}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
 
                 <div className='total flex'>

@@ -18,6 +18,7 @@
 .plan {
     color: var(--clr-marine-blue);
     font-weight: var(--fw-bold);
+    margin-bottom: 1.5rem;
 }
 
 .btn-change {
@@ -33,6 +34,28 @@
 
 .btn-change:hover {
     color: var(--clr-purple);
+}
+
+.summary-addon-wrapper {
+    margin-top: .75rem;
+    position: relative;
+
+    display: grid;
+    gap: .75rem;
+}
+
+
+.summary-addon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    width: 100%;
+    height: 1px;
+    background-color: var(--clr-light-grey);
+}
+
+.addon-price {
+    color: var(--clr-marine-blue);
 }
 
 .plan-price {
@@ -53,6 +76,15 @@
 @media (min-width:800px) {
     .summary-wrapper {
         font-size: 1rem;
+    }
+
+    .plan {
+        margin-bottom: 2rem;
+    }
+
+    .summary-addon-wrapper {
+        margin-top: 1.5rem;
+        gap: 1rem;
     }
 
     .total-price {
