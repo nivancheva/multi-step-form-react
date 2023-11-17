@@ -13,13 +13,14 @@ const schema = yup
   })
   .required()
 
-export default function StepOneInputs({ onForwardClick }) {
+export default function StepOneInputs({ onForwardClick, formData }) {
   const {
         register,
         handleSubmit,
         formState: { errors },
       } = useForm({
         resolver: yupResolver(schema),
+        defaultValues: formData.personalInfo
     });
     function handleFormSubmit(data) {
         onForwardClick(data);

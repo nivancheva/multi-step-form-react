@@ -14,7 +14,7 @@ function App() {
   function getStepContent() {
     switch (currentStep) {
       case 1:
-        return <StepOneInputs onForwardClick={onStepOneSubmit} />;
+        return <StepOneInputs formData={formData} onForwardClick={onStepOneSubmit} />;
       case 2:
         return <StepTwoSelectPlan formData={formData} onBackClick={goBack} onForwardClick={onStepTwoSubmit} />;
       case 3:
