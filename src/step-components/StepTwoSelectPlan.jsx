@@ -32,9 +32,9 @@ const cards = [
     }
 ]
 
-export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
-    const [yearly, setYearly] = useState(false);
-    const [selectedCard, setSelectedCard] = useState(cards[0]);
+export default function StepTwoSelectPlan({ onForwardClick, onBackClick, formData }) {
+    const [yearly, setYearly] = useState(formData.yearly);
+    const [selectedCard, setSelectedCard] = useState(formData.plan || cards[0]);
 
     function onPlanPeriodChange(x) {
         setYearly(x);

@@ -24,8 +24,8 @@ const addOns = [
     }
 ]
 
-export default function StepThreeAddOns({ onForwardClick, onBackClick, isYearly }) {
-    const [selectedAddOns, setSelectedAddOns] = useState([]);
+export default function StepThreeAddOns({ onForwardClick, onBackClick, formData }) {
+    const [selectedAddOns, setSelectedAddOns] = useState(formData.addOns || []);
 
     function toggleAddOn(addOn) {
         if (selectedAddOns.indexOf(addOn) > -1) {
@@ -53,7 +53,7 @@ export default function StepThreeAddOns({ onForwardClick, onBackClick, isYearly 
                                 <AddOns
                                     {...addOn}
                                     onChange={() => toggleAddOn(addOn)}
-                                    isYearly={isYearly}
+                                    isYearly={formData.yearly}
                                     selected={isSelected}/>
                             </div>
                         )
