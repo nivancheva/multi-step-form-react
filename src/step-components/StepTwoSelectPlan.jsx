@@ -7,48 +7,43 @@ import { useState } from 'react';
 import './StepTwoSelectPlan.css'
 import StepTitle from './StepTitle';
 
+// price:"$9/mo",
 const cards = [
     {
         image: iconArcade,
         title:'Arcade',
-        price:"$9/mo",
-        valuePriceM: 9,
-        yearlyPrice:"$90/y",
-        valuePriceY: 90,
+        price: 9,
+        yearlyPrice: 90,
         discount:"2 months free"
     },
     {
         image:iconAdvanced,
         title:'Advanced',
-        price:"$12/mo",
-        valuePriceM: 12,
-        yearlyPrice:"$120/y",
-        valuePriceY: 120,
+        price: 12,
+        yearlyPrice: 120,
         discount:"2 months free"
     },
     {
         image:iconPro,
         title:'Pro',
-        price:"$15/mo",
-        valuePriceM: 15,
-        yearlyPrice:"$150/y",
-        valuePriceY: 150,
+        price: 15,
+        yearlyPrice: 150,
         discount:"2 months free"
     }
 ]
 
 export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
-    const [checked, setChecked] = useState(false);
-    const [selectedCard, setSelectedCard] = useState();
+    const [yearly, setYearly] = useState(false);
+    const [selectedCard, setSelectedCard] = useState(cards[0]);
 
-    function handleChecked(x) {
-        setChecked(x);
+    function onPlanPeriodChange(x) {
+        setYearly(x);
     }
 
     function handleForward() {
         onForwardClick({
             plan: selectedCard,
-            yearly: checked
+            yearly: yearly
         });
     }
 
@@ -61,21 +56,19 @@ export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
 
                 <div className='card-wrapper'>
                     {cards.map((card,idx) => {
-                        const price = checked ? card.yearlyPrice : card.price;
                         const isSelected = card === selectedCard;
                         return (
                             <div key={idx} onClick={() => setSelectedCard(card)}>
                                 <PlanCard
                                     {...card}
-                                    price={price}
-                                    showDiscount={checked}
+                                    isYearly={yearly}
                                     selected={isSelected}/>
                             </div>
                         )
                     })}
                 </div>
 
-                <PlanPeriod value={checked} onChange={handleChecked}/>
+                <PlanPeriod value={yearly} onChange={onPlanPeriodChange}/>
                 
             </div>
         </div>

@@ -18,7 +18,7 @@ function App() {
       case 2:
         return <StepTwoSelectPlan onBackClick={goBack} onForwardClick={onStepTwoSubmit} />;
       case 3:
-        return <StepThreeAddOns onBackClick={goBack} onForwardClick={onStepThreeSubmit} />;
+        return <StepThreeAddOns onBackClick={goBack} onForwardClick={onStepThreeSubmit} isYearly={formData.yearly} />;
       case 4:
         return <StepFourSummary formData={formData} onBackClick={goBack} onForwardClick={goForward} onChangeClick={() => setCurrentStep(2)} />;
       case 5:

@@ -6,16 +6,28 @@ export default function StepFourSummary({ onForwardClick, onBackClick, onChangeC
         let result = 0;
 
         if (formData.yearly) {
-            result += formData.plan.valuePriceY;
+            result += formData.plan.yearlyPrice;
         } else {
-            result += formData.plan.valuePriceM;
+            result += formData.plan.price;
         }
 
         formData.addOns.forEach(addOn => {
-            result += addOn.valuePrice;
+            if (formData.yearly) {
+                result += addOn.yearlyPrice;
+            } else {
+                result += addOn.price;
+            }
         });
 
-        return `+$${result}/${formData.yearly ? "y" : "mo"}`;
+        return `+$${result}/${formData.yearly ? "yr" : "mo"}`;
+    }
+
+    function formatPrice(pricedObject) {
+        if (formData.yearly) {
+            return `$${pricedObject.yearlyPrice}/yr`;
+        } else {
+            return `$${pricedObject.price}/mo`;
+        }
     }
     return (
         <>
@@ -29,14 +41,14 @@ export default function StepFourSummary({ onForwardClick, onBackClick, onChangeC
                                 <p>{formData.plan.title} ({formData.yearly ? "Yearly" : "Monthly"})</p>
                                 <button onClick={onChangeClick} className='btn-change'>Change</button>
                             </div>
-                            <p className='plan-price'>{formData.yearly ? formData.plan.yearlyPrice : formData.plan.price}</p>
+                            <p className='plan-price'>{formatPrice(formData.plan)}</p>
                         </div>
                         <div className='summary-addon-wrapper'>
                             {formData.addOns.map((summaryAddOn, idx) => {
                                 return (
                                     <div key={idx} className='flex summary-addon'>
                                         <p>{summaryAddOn.title}</p>
-                                        <p className='addon-price'>{summaryAddOn.price}</p>
+                                        <p className='addon-price'>+{formatPrice(summaryAddOn)}</p>
                                     </div>
                                 )
                             })}

@@ -7,24 +7,24 @@ const addOns = [
     {
         title:'Online service',
         description:"Access to multiplayer games",
-        price:"+$1/mo",
-        valuePrice: 1
+        price: 1,
+        yearlyPrice: 10
     },
     {
         title:'Larger storage',
         description:"Extra 1TB of cloud save",
-        price:"+$2/mo",
-        valuePrice: 2
+        price: 2,
+        yearlyPrice: 20
     },
     {
         title:'Customizable Profile',
         description:"Custom theme on your profile",
-        price:"+$2/mo",
-        valuePrice: 2
+        price: 2,
+        yearlyPrice: 20
     }
 ]
 
-export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
+export default function StepThreeAddOns({ onForwardClick, onBackClick, isYearly }) {
     const [selectedAddOns, setSelectedAddOns] = useState([]);
 
     function toggleAddOn(addOn) {
@@ -53,6 +53,7 @@ export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
                                 <AddOns
                                     {...addOn}
                                     onChange={() => toggleAddOn(addOn)}
+                                    isYearly={isYearly}
                                     selected={isSelected}/>
                             </div>
                         )

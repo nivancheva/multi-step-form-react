@@ -1,6 +1,14 @@
 import './AddOns.css';
 
-export default function AddOns({ title, description, price, selected, onChange }) {
+export default function AddOns({ title, description, price, yearlyPrice, selected, onChange, isYearly }) {
+    function formatPrice() {
+        if (isYearly) {
+            return `$${yearlyPrice}/yr`;
+        } else {
+            return `$${price}/mo`;
+        }
+    }
+
     return (
         <div className={`add-ons-wrapper${selected ? " selected" : ""}`}>
             <div className='flex add-ons'>
@@ -13,7 +21,7 @@ export default function AddOns({ title, description, price, selected, onChange }
                     <p className="add-ons-description">{description}</p>
                 </div>
             </div>
-            <p className="add-ons-price">{price}</p>
+            <p className="add-ons-price">{formatPrice()}</p>
         </div>
     )
 }
