@@ -1,5 +1,5 @@
 .bg-image {
-    background-image: url('../public/images/bg-sidebar-mobile.svg');
+    background-image: url('/images/bg-sidebar-mobile.svg');
     background-repeat: no-repeat;
     height: 100%;
     color: var(--clr-white);
@@ -53,7 +53,7 @@
 
 @media (min-width:800px) {
     .bg-image {
-        background-image: url('../public/images/bg-sidebar-desktop.svg');
+        background-image: url('/images/bg-sidebar-desktop.svg');
         padding: 2.5rem 5.563rem 0 2rem;
         flex-direction: column;
         gap: 2rem;
