@@ -62,10 +62,10 @@ export default function StepThreeAddOns({ onForwardClick, onBackClick, formData 
             </div>
         </div>
 
-        <div className='button-section'>
-            <div className='flex flex-space-between bg-white'>
+        <div className='button-section bg-white'>
+            <div className='flex flex-space-between'>
                 <button onClick={onBackClick} className="button btn-clear">Go Back</button>
-                <button onClick={handleForward} className="button btn-primery">Next Steps</button>
+                <button onClick={handleForward} className="button btn-primary">Next Steps</button>
             </div>
         </div>
         </>

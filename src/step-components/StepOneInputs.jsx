@@ -42,7 +42,7 @@ export default function StepOneInputs({ onForwardClick, formData }) {
 
           <div className='button-section bg-white'>
             <div className='btn-next'>
-              <button form="myform" className="button btn-primery">Next Steps</button>
+              <button form="myform" className="button btn-primary">Next Steps</button>
             </div>
           </div>
         </>

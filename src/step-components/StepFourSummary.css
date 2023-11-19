@@ -36,21 +36,6 @@
     color: var(--clr-purple);
 }
 
-.btn-confirm {
-    background-color: var(--clr-purple);
-    color: white;
-    border: 0;
-    outline: 0;
-    padding: .875rem 1.75rem;
-    font-weight: var(--fw-semi-bold);
-    cursor: pointer;
-    border-radius: var(--border-radius);
-}
-
-.btn-confirm:hover {
-    background-color: hsl(243, 100%, 77%);;
-}
-
 .summary-addon-wrapper {
     margin-top: .75rem;
     position: relative;

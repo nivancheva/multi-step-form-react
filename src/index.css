@@ -85,9 +85,18 @@ body {
     color: var(--clr-marine-blue);
 }
 
-.btn-primery {
+.btn-primary {
     background-color: var(--clr-marine-blue);
     color: var(--clr-white);
+}
+
+.btn-confirm {
+    background-color: var(--clr-purple);
+    color: white;
+}
+
+.btn-confirm:hover {
+    background-color: hsl(243, 100%, 77%);;
 }
 
 @media (max-width:799px) {
