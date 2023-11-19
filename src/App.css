@@ -44,12 +44,18 @@
         padding: 1rem;
         background-color: var(--clr-white);
         box-shadow: var(--box-shadow);
-        max-width: 940px;
+        width: calc(100% - 2rem);
         min-height: 600px;
         margin-inline: 1rem;
     }
 
     .main-wrapper {
         padding: 2.5rem 6.25rem 1rem;
+    }
+}
+
+@media (min-width:972px) {
+    .step-form {
+        width: 940px;
     }
 }
