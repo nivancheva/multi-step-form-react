@@ -1,10 +1,12 @@
-import { useContext } from 'react';
 import './StepFourSummary.css';
 import StepTitle from './StepTitle';
-import { formDataContext } from '../context/formDataContext';
+import { useFormDataContext } from '../context/Context';
+import { useNavigate } from 'react-router-dom';
 
-export default function StepFourSummary({ onForwardClick, onBackClick, onChangeClick }) {
-    const {formData} = useContext(formDataContext);
+export default function StepFourSummary() {
+    const {formData} = useFormDataContext();
+    const navigate = useNavigate();
+
 
     function getTotalPrice() {
         let result = 0;
@@ -33,6 +35,19 @@ export default function StepFourSummary({ onForwardClick, onBackClick, onChangeC
             return `$${pricedObject.price}/mo`;
         }
     }
+
+    function handleBack() {
+        navigate('/multi-step-form-react/addOns');
+    }
+
+    function handleForward() {
+        navigate('/multi-step-form-react/thankYou')
+    }
+
+    function onChangeClick() {
+        navigate('/multi-step-form-react/plan');
+    }
+
     return (
         <>
         <div className='steps-section'>
@@ -69,8 +84,8 @@ export default function StepFourSummary({ onForwardClick, onBackClick, onChangeC
 
           <div className='button-section bg-white'>
             <div className='flex flex-space-between'>
-              <button onClick={onBackClick} className="button btn-clear">Go Back</button>
-              <button onClick={onForwardClick} className="button btn-confirm">Confirm</button>
+              <button onClick={handleBack} className="button btn-clear">Go Back</button>
+              <button onClick={handleForward} className="button btn-confirm">Confirm</button>
             </div>
           </div>
         </>

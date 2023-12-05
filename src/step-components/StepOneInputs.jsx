@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useContext } from 'react';
-import { formDataContext } from '../context/formDataContext';
+import { formDataContext } from '../context/Context';
+import { useNavigate } from 'react-router-dom';
 
 const schema = yup
   .object({
@@ -15,8 +16,9 @@ const schema = yup
   })
   .required()
 
-export default function StepOneInputs({ onForwardClick }) {
-  const {formData} = useContext(formDataContext)
+export default function StepOneInputs() {
+  const {formData, setFormData} = useContext(formDataContext);
+  const navigate = useNavigate();
   
   const {
         register,
@@ -27,7 +29,9 @@ export default function StepOneInputs({ onForwardClick }) {
         defaultValues: formData.personalInfo
     });
     function handleFormSubmit(data) {
-        onForwardClick(data);
+        setFormData(formData => { return {...formData, personalInfo: data}});
+    
+        navigate('/multi-step-form-react/plan');
     }
 
     return (

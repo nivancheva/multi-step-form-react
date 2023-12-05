@@ -6,7 +6,8 @@ import iconPro from '../images/icon-pro.svg';
 import { useContext, useState } from 'react';
 import './StepTwoSelectPlan.css'
 import StepTitle from './StepTitle';
-import { formDataContext } from '../context/formDataContext';
+import { formDataContext } from '../context/Context';
+import { useNavigate } from 'react-router-dom';
 
 // price:"$9/mo",
 const cards = [
@@ -33,20 +34,24 @@ const cards = [
     }
 ]
 
-export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
-    const {formData} = useContext(formDataContext);
+export default function StepTwoSelectPlan() {
+    const {formData, setFormData} = useContext(formDataContext);
     const [yearly, setYearly] = useState(formData.yearly);
     const [selectedCard, setSelectedCard] = useState(formData.plan || cards[0]);
+    const navigate = useNavigate();
 
     function onPlanPeriodChange(x) {
         setYearly(x);
     }
 
-    function handleForward() {
-        onForwardClick({
-            plan: selectedCard,
-            yearly: yearly
-        });
+    function handleBack() {
+        navigate('/multi-step-form-react');
+    }
+
+    function handleForward() {        
+        setFormData(formData => { return {...formData, plan: selectedCard, yearly: yearly}});
+        
+        navigate('/multi-step-form-react/addOns');
     }
 
     return (
@@ -77,7 +82,7 @@ export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
 
         <div className='button-section bg-white'>
             <div className='flex flex-space-between'>
-                <button onClick={onBackClick} className="button btn-clear">Go Back</button>
+                <button onClick={handleBack} className="button btn-clear">Go Back</button>
                 <button onClick={handleForward} className="button btn-primary">Next Steps</button>
             </div>
         </div>

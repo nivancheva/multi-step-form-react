@@ -2,7 +2,8 @@ import { useContext, useState } from 'react';
 import AddOns from '../components/AddOns';
 import './StepThreeAddOns.css';
 import StepTitle from './StepTitle';
-import { formDataContext } from '../context/formDataContext';
+import { formDataContext } from '../context/Context';
+import { useNavigate } from 'react-router-dom';
 
 const addOns = [
     {
@@ -25,9 +26,10 @@ const addOns = [
     }
 ]
 
-export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
-    const {formData} = useContext(formDataContext);
+export default function StepThreeAddOns() {
+    const {formData, setFormData} = useContext(formDataContext);
     const [selectedAddOns, setSelectedAddOns] = useState(formData.addOns || []);
+    const navigate = useNavigate();
 
     function toggleAddOn(addOn) {
         if (selectedAddOns.indexOf(addOn) > -1) {
@@ -37,8 +39,14 @@ export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
         }
     }
 
-    function handleForward() {
-        onForwardClick(selectedAddOns);
+    function handleBack() {
+        navigate('/multi-step-form-react/plan');
+    }
+
+    function handleForward() {        
+        setFormData(formData => { return {...formData, addOns: selectedAddOns }});
+        
+        navigate('/multi-step-form-react/summary');
     }
 
     return (
@@ -66,7 +74,7 @@ export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
 
         <div className='button-section bg-white'>
             <div className='flex flex-space-between'>
-                <button onClick={onBackClick} className="button btn-clear">Go Back</button>
+                <button onClick={handleBack} className="button btn-clear">Go Back</button>
                 <button onClick={handleForward} className="button btn-primary">Next Steps</button>
             </div>
         </div>
