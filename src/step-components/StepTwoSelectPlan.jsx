@@ -3,9 +3,10 @@ import PlanPeriod from '../components/PlanPeriod';
 import iconArcade from '../images/icon-arcade.svg';
 import iconAdvanced from '../images/icon-advanced.svg';
 import iconPro from '../images/icon-pro.svg';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './StepTwoSelectPlan.css'
 import StepTitle from './StepTitle';
+import { formDataContext } from '../context/formDataContext';
 
 // price:"$9/mo",
 const cards = [
@@ -32,7 +33,8 @@ const cards = [
     }
 ]
 
-export default function StepTwoSelectPlan({ onForwardClick, onBackClick, formData }) {
+export default function StepTwoSelectPlan({ onForwardClick, onBackClick }) {
+    const {formData} = useContext(formDataContext);
     const [yearly, setYearly] = useState(formData.yearly);
     const [selectedCard, setSelectedCard] = useState(formData.plan || cards[0]);
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import './App.css';
 import ThankYouCard from './components/ThankYouCard';
 import StepsPreview from './components/StepsPreview';
@@ -6,6 +6,7 @@ import StepOneInputs from './step-components/StepOneInputs';
 import StepTwoSelectPlan from './step-components/StepTwoSelectPlan';
 import StepThreeAddOns from './step-components/StepThreeAddOns';
 import StepFourSummary from './step-components/StepFourSummary';
+import { formDataContext } from './context/formDataContext';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -14,13 +15,13 @@ function App() {
   function getStepContent() {
     switch (currentStep) {
       case 1:
-        return <StepOneInputs formData={formData} onForwardClick={onStepOneSubmit} />;
+        return <StepOneInputs onForwardClick={onStepOneSubmit} />;
       case 2:
-        return <StepTwoSelectPlan formData={formData} onBackClick={goBack} onForwardClick={onStepTwoSubmit} />;
+        return <StepTwoSelectPlan onBackClick={goBack} onForwardClick={onStepTwoSubmit} />;
       case 3:
-        return <StepThreeAddOns formData={formData} onBackClick={goBack} onForwardClick={onStepThreeSubmit} />;
+        return <StepThreeAddOns onBackClick={goBack} onForwardClick={onStepThreeSubmit} />;
       case 4:
-        return <StepFourSummary formData={formData} onBackClick={goBack} onForwardClick={goForward} onChangeClick={() => setCurrentStep(2)} />;
+        return <StepFourSummary onBackClick={goBack} onForwardClick={goForward} onChangeClick={() => setCurrentStep(2)} />;
       case 5:
         return <ThankYouCard />;
     }
@@ -62,7 +63,9 @@ function App() {
         </div>
 
         <div className='main-wrapper'>
-            { getStepContent() }
+            <formDataContext.Provider value={{formData}}>
+              { getStepContent() }
+            </formDataContext.Provider>          
         </div>
 
       </div>

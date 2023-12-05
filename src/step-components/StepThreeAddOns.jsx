@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import AddOns from '../components/AddOns';
 import './StepThreeAddOns.css';
 import StepTitle from './StepTitle';
+import { formDataContext } from '../context/formDataContext';
 
 const addOns = [
     {
@@ -24,7 +25,8 @@ const addOns = [
     }
 ]
 
-export default function StepThreeAddOns({ onForwardClick, onBackClick, formData }) {
+export default function StepThreeAddOns({ onForwardClick, onBackClick }) {
+    const {formData} = useContext(formDataContext);
     const [selectedAddOns, setSelectedAddOns] = useState(formData.addOns || []);
 
     function toggleAddOn(addOn) {

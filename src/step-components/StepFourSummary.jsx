@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import './StepFourSummary.css';
 import StepTitle from './StepTitle';
+import { formDataContext } from '../context/formDataContext';
 
-export default function StepFourSummary({ onForwardClick, onBackClick, onChangeClick, formData }) {
+export default function StepFourSummary({ onForwardClick, onBackClick, onChangeClick }) {
+    const {formData} = useContext(formDataContext);
+
     function getTotalPrice() {
         let result = 0;
 

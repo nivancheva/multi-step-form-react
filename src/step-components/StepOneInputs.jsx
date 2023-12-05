@@ -4,6 +4,8 @@ import StepTitle from "./StepTitle";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useContext } from 'react';
+import { formDataContext } from '../context/formDataContext';
 
 const schema = yup
   .object({
@@ -13,7 +15,9 @@ const schema = yup
   })
   .required()
 
-export default function StepOneInputs({ onForwardClick, formData }) {
+export default function StepOneInputs({ onForwardClick }) {
+  const {formData} = useContext(formDataContext)
+  
   const {
         register,
         handleSubmit,
